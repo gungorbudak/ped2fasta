@@ -10,11 +10,11 @@
 # http://www.gungorbudak.com
 
 use strict;
-my $path = $ARGV[0]; # Path to PED file (without .ped - should be given between double quotes)
+my $file = $ARGV[0]; # Path to PED file (without .ped - should be given between double quotes)
 my @columns;
 my $sequence;
 open(my $inf, "<", $file.".ped") or die $!;
-open(my $ouf, ">", $file.".fasta") or die $!;
+open(my $ouf, ">", $file.".fa") or die $!;
 while (my $row = <$inf>) {
 	# Each row belongs to one individual
 	chomp $row;
